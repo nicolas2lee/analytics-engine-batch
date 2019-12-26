@@ -3,10 +3,11 @@ data "ibm_resource_group" "group" {
 }
 
 resource "ibm_resource_instance" "testacc_ds_resource_instance" {
-  name              = "analytics-engine"
+  name              = "terraform-analytics-engine"
   location          = "eu-de"
   resource_group_id = "${data.ibm_resource_group.group.id}"
   service           = "ibmanalyticsengine"
+#  plan              = "standard-hourly"
   plan              = "lite"
 
   parameters = {
