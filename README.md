@@ -68,3 +68,25 @@ Or using api key
 ### Hive job
 
 ### Run spark with HDFS (cos)
+
+./bin/spark-submit \
+  --class org.apache.spark.examples.SparkPi \
+  --master local[8] \
+  /Users/xinrui/tao/software/spark-2.4.3-bin-hadoop2.7/examples/jars/spark-examples_2.11-2.4.3.jar \
+  100
+
+./bin/spark-submit \
+  --class tao.SparkPi \
+  --master local[8] \
+  /Users/xinrui/tao/ibmcloud_projects/streaming-scala-demo/spark-object-storage-demo-scala/target/spark-object-storage-demo-scala-1.0-SNAPSHOT.jar \
+  100   
+  
+./bin/spark-submit \
+  --class tao.Application \
+  --master local[8] \
+  --files /Users/xinrui/tao/ibmcloud_projects/streaming-scala-demo/spark-object-storage-demo-scala/src/main/resources/log4j-spark.properties \
+  --conf "spark.driver.extraJavaOptions=-Dlog4j.configuration=log4j-spark.properties" \
+  --conf "spark.executor.extraJavaOptions=-Dlog4j.configuration=log4j-spark.properties" \
+  /Users/xinrui/tao/ibmcloud_projects/streaming-scala-demo/spark-object-storage-demo-scala/target/spark-object-storage-demo-scala-1.0-SNAPSHOT.jar \
+  100   
+  
