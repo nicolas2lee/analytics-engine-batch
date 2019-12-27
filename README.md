@@ -8,9 +8,37 @@ https://developer.ibm.com/clouddataservices/docs/analytics-engine/
 ### Provision necessary ibm cloud resource
 * Cloud object storage
 * Analytics engine
+    * if create instance by web console, add this part in Advanced configuration to set default cos storage
+    
+    
+        {
+            "core-site": {
+                "fs.cos.firstbucket.v2.signer.type": false, 
+                "fs.cos.firstbucket.access.ke": "<access-key>", 
+                "fs.cos.firstbucket.secret.key": "<secret-key>",
+                "fs.cos.firstbucket.endpoint": "s3.eu.cloud-object.storage.appdomain.cloud"
+            }
+        } 
+        
 * IBM Watson Studio
 * Cassandra
 #### Using Terraform & ibm cloud cli plugin
+
+## Data
+Using kaggle data
+### Install kaggle client cli
+    
+    pip install kaggle
+
+### Set credential for kaggle account
+
+profile -> account -> create new api token
+
+Change the right for credential file
+
+    chmod 600 ~/.kaggle/kaggle.json
+    
+[kaggle client cli](https://github.com/Kaggle/kaggle-api)
 
 ## Storage
 ### Cloud object storage

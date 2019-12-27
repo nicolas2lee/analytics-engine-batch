@@ -17,8 +17,8 @@ resource "ibm_resource_instance" "testacc_ds_resource_instance" {
     "advanced_options"  = {
       "ambari_config"     = {
         "core-site"         = {
-          "fs.cos.<servicename>.v2.signer.type" = false,
-          "fs.cos.<servicename>.endpoint"       = "http://s3.eu.cloud-object-storage.appdomain.cloud",
+          "fs.cos.<servicename>.v2.signer.type" = false
+          "fs.cos.<servicename>.endpoint"       = "http://s3.eu.cloud-object-storage.appdomain.cloud"
           "fs.cos.<servicename>.access.key"    = "<accessKey>"
           "fs.cos.<servicename>.secret.key"    = "<secretKey>"
         }
